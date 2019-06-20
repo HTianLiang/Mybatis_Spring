@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--写sql语句-->
+<mapper namespace="soft.demo.interf.UserMapper">
+    
+    <!--sql片段-->
+    <sql id="selector">
+        select * from user 
+    </sql>
+    <select id="selectUserById" parameterType="Integer" resultType="User">
+        <include refid="selector"/>
+        where id = #{id}
+    </select>
+
+</mapper>
